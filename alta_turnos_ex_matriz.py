@@ -47,8 +47,7 @@ def verificar_dni(dni):
         print("El paciente no esta dado de alta, se lo redirigira a la pagina de alta.")
         os.system("pause")
         main()
-        dni = crear_dni()
-        ubicacion = str(pacientes).find(str(dni))
+        return False
     else:
         return True
 
@@ -138,7 +137,10 @@ def __main__():
     #y la tercera almacena la hora del turno
     clear()
     dni = crear_dni()
-    verificar_dni(dni)
+    valor = verificar_dni(dni)
+    if valor == False: 
+        return
+    
     clear()
     año = crear_año()
     clear()
